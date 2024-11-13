@@ -95,9 +95,15 @@ getDistanceBetweenPoints(x1, y1, x2, y2)
  *   x + 8 = 0       => -8
  *   5*x = 0         => 0
  */
-function getLinearEquationRoot(/* a, b */) {
-  throw new Error('Not implemented');
+function getLinearEquationRoot(a, b) {
+let root = 0;
+if(b > 0){b = -b;}
+else {b = Math.abs(b)}
+if(a === 0) {root = b / 1}
+else {root = b / a;}
+console.log(root);
 }
+getLinearEquationRoot(a, b);
 
 /**
  * Returns an angle (in radians) between two vectors given by xi and yi,
