@@ -139,10 +139,12 @@ function getAngleBetweenVectors(/* x1, y1, x2, y2 */) {
  *     5     => 5
  *     0     => 0
  */
-function getLastDigit(/* value */) {
-  throw new Error('Not implemented');
+function getLastDigit(value) {
+  const lastDigit = value % 10;
+  console.log(lastDigit);
+  return lastDigit;
 }
-
+getLastDigit(value);
 /**
  * Returns a number by given string representation.
  *
@@ -154,9 +156,12 @@ function getLastDigit(/* value */) {
  *     '37'     => 37
  * '-525.5'     => -525.5
  */
-function parseNumberFromString(/* value */) {
-  throw new Error('Not implemented');
+function parseNumberFromString(value) {
+  const numb = Number(value);
+  console.log(numb);
+  return numb;
 }
+parseNumberFromString(value)
 
 /**
  * Returns a diagonal length of the rectangular parallelepiped given by its sides a,b,c.
@@ -171,9 +176,12 @@ function parseNumberFromString(/* value */) {
  *   3,3,3   => 5.196152422706632
  *   1,2,3   => 3.741657386773941
  */
-function getParallelepipedDiagonal(/* a, b, c */) {
-  throw new Error('Not implemented');
+function getParallelepipedDiagonal(a, b, c) {
+  const dio = Math.sqrt(Math.pow(a,2) + Math.pow(b,2) + Math.pow(c,2));
+  console.log(dio);
+  return dio;
 }
+getParallelepipedDiagonal(a, b, c);
 
 /**
  * Returns the number rounded to specified power of 10.
@@ -192,9 +200,17 @@ function getParallelepipedDiagonal(/* a, b, c */) {
  *   1678, 2  => 1700
  *   1678, 3  => 2000
  */
-function roundToPowerOfTen(/* num, pow */) {
-  throw new Error('Not implemented');
+function roundToPowerOfTen(num, pow) {
+    let numb = 0;
+    if (pow > 0){
+        let c = num / (Math.pow(10,pow));
+        numb = Math.round(c)*Math.pow(10,pow);
+    }
+  else {numb = Math.round(num);} 
+  console.log(numb);
+  return numb;
 }
+roundToPowerOfTen(num, pow);
 
 /**
  * Returns true is the number is prime; otherwise false.
