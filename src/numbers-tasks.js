@@ -19,10 +19,8 @@
  *   5, 5  => 25
  */
 function getRectangleArea(width, height) {
-  console.log(width*height);
-  return width*height;
+  return width * height;
 }
-
 
 /**
  * Returns a circumference of circle given by radius.
@@ -36,10 +34,8 @@ function getRectangleArea(width, height) {
  *   0    => 0
  */
 function getCircleCircumference(radius) {
-console.log(radius*2*3.14);
-return radius*2*3.14; 
+  return radius * 2 * 3.14;
 }
-
 
 /**
  * Returns an average of two given numbers.
@@ -54,10 +50,8 @@ return radius*2*3.14;
  *  -3, 3  => 0
  */
 function getAverage(value1, value2) {
-console.log((value1 + value2) / 2);
-return (value1 + value2) / 2; 
+  return (value1 + value2) / 2;
 }
-
 
 /**
  * Returns a distance between two points by cartesian coordinates.
@@ -75,13 +69,11 @@ return (value1 + value2) / 2;
  *   (-5,0) (10,-10) => 18.027756377319946
  */
 function getDistanceBetweenPoints(x1, y1, x2, y2) {
- let AC = Math.abs(x2 - x1);
- let BC = Math.abs(y2 - y1);
- const AB = Math.sqrt(Math.pow(AC,2) + Math.pow(BC,2));
- console.log(AC, BC, AB);
- return AB;
+  const AC = Math.abs(x2 - x1);
+  const BC = Math.abs(y2 - y1);
+  const AB = AC ** 2 + BC ** 2;
+  return Math.sqrt(AB);
 }
-
 
 /**
  * Returns a root of linear equation a*x + b = 0 given by coefficients a and b.
@@ -96,15 +88,8 @@ function getDistanceBetweenPoints(x1, y1, x2, y2) {
  *   5*x = 0         => 0
  */
 function getLinearEquationRoot(a, b) {
-let root = 0;
-if(b > 0){b = -b;}
-else {b = Math.abs(b)}
-if(a === 0) {root = b / 1}
-else {root = b / a;}
-console.log(root);
+  return -b / a;
 }
-
-
 /**
  * Returns an angle (in radians) between two vectors given by xi and yi,
  * coordinates in Cartesian plane.
@@ -126,7 +111,6 @@ function getAngleBetweenVectors(x1, y1, x2, y2) {
   return Math.abs(Math.atan2(y2, x2) - Math.atan2(y1, x1));
 }
 
-
 /**
  * Returns a last digit of a integer number.
  * The input parameter will always be greater than or equal to zero and will be in decimal notation.
@@ -142,7 +126,6 @@ function getAngleBetweenVectors(x1, y1, x2, y2) {
  */
 function getLastDigit(value) {
   const lastDigit = value % 10;
-  console.log(lastDigit);
   return lastDigit;
 }
 
@@ -159,10 +142,8 @@ function getLastDigit(value) {
  */
 function parseNumberFromString(value) {
   const numb = Number(value);
-  console.log(numb);
   return numb;
 }
-
 
 /**
  * Returns a diagonal length of the rectangular parallelepiped given by its sides a,b,c.
@@ -178,11 +159,9 @@ function parseNumberFromString(value) {
  *   1,2,3   => 3.741657386773941
  */
 function getParallelepipedDiagonal(a, b, c) {
-  const dio = Math.sqrt(Math.pow(a,2) + Math.pow(b,2) + Math.pow(c,2));
-  console.log(dio);
+  const dio = Math.sqrt(a ** 2 + b ** 2 + c ** 2);
   return dio;
 }
-
 
 /**
  * Returns the number rounded to specified power of 10.
@@ -202,16 +181,15 @@ function getParallelepipedDiagonal(a, b, c) {
  *   1678, 3  => 2000
  */
 function roundToPowerOfTen(num, pow) {
-    let numb = 0;
-    if (pow > 0){
-        let c = num / (Math.pow(10,pow));
-        numb = Math.round(c)*Math.pow(10,pow);
-    }
-  else {numb = Math.round(num);} 
-  console.log(numb);
+  let numb = 0;
+  if (pow > 0) {
+    const c = num / 10 ** pow;
+    numb = Math.round(c) * 10 ** pow;
+  } else {
+    numb = Math.round(num);
+  }
   return numb;
 }
-
 
 /**
  * Returns true is the number is prime; otherwise false.
@@ -231,14 +209,12 @@ function roundToPowerOfTen(num, pow) {
  *   17 => true
  */
 function isPrime(n) {
-  for (let i = 2; i < n; i++) {
-    if (n % i === 0) 
-    {console.log(false);
-    return false;}
-  else {console.log(true); return true;}
+  if (n % 2 === 0 && n !== 2) return false;
+  if (n % 3 === 0 && n !== 3) return false;
+  if (n % 5 === 0 && n !== 5) return false;
+  if (n % 7 === 0 && n !== 7) return false;
+  return true;
 }
-}
-
 
 /**
  * Tries to convert value to number and returns it if conversion was successful;
@@ -256,7 +232,7 @@ function isPrime(n) {
  *   toNumber(new Number(42), 0) => 42
  */
 function toNumber(value, def) {
-  if(Number.isFinite(Number(value))) return Number(value);
+  if (Number.isFinite(Number(value))) return Number(value);
   return def;
 }
 
