@@ -22,7 +22,7 @@ function getRectangleArea(width, height) {
   console.log(width*height);
   return width*height;
 }
-getRectangleArea(width, height)
+
 
 /**
  * Returns a circumference of circle given by radius.
@@ -39,7 +39,7 @@ function getCircleCircumference(radius) {
 console.log(radius*2*3.14);
 return radius*2*3.14; 
 }
-getCircleCircumference(radius)
+
 
 /**
  * Returns an average of two given numbers.
@@ -57,7 +57,7 @@ function getAverage(value1, value2) {
 console.log((value1 + value2) / 2);
 return (value1 + value2) / 2; 
 }
-getAverage(value1, value2)
+
 
 /**
  * Returns a distance between two points by cartesian coordinates.
@@ -81,7 +81,7 @@ function getDistanceBetweenPoints(x1, y1, x2, y2) {
  console.log(AC, BC, AB);
  return AB;
 }
-getDistanceBetweenPoints(x1, y1, x2, y2)
+
 
 /**
  * Returns a root of linear equation a*x + b = 0 given by coefficients a and b.
@@ -103,7 +103,7 @@ if(a === 0) {root = b / 1}
 else {root = b / a;}
 console.log(root);
 }
-getLinearEquationRoot(a, b);
+
 
 /**
  * Returns an angle (in radians) between two vectors given by xi and yi,
@@ -122,9 +122,10 @@ getLinearEquationRoot(a, b);
  *   (0,-1) (1,0)    => π/2
  *   (0,1) (0,1)     => 0
  */
-function getAngleBetweenVectors(/* x1, y1, x2, y2 */) {
-  throw new Error('Not implemented');
+function getAngleBetweenVectors(x1, y1, x2, y2) {
+  return Math.abs(Math.atan2(y2, x2) - Math.atan2(y1, x1));
 }
+
 
 /**
  * Returns a last digit of a integer number.
@@ -144,7 +145,7 @@ function getLastDigit(value) {
   console.log(lastDigit);
   return lastDigit;
 }
-getLastDigit(value);
+
 /**
  * Returns a number by given string representation.
  *
@@ -161,7 +162,7 @@ function parseNumberFromString(value) {
   console.log(numb);
   return numb;
 }
-parseNumberFromString(value)
+
 
 /**
  * Returns a diagonal length of the rectangular parallelepiped given by its sides a,b,c.
@@ -181,7 +182,7 @@ function getParallelepipedDiagonal(a, b, c) {
   console.log(dio);
   return dio;
 }
-getParallelepipedDiagonal(a, b, c);
+
 
 /**
  * Returns the number rounded to specified power of 10.
@@ -210,7 +211,7 @@ function roundToPowerOfTen(num, pow) {
   console.log(numb);
   return numb;
 }
-roundToPowerOfTen(num, pow);
+
 
 /**
  * Returns true is the number is prime; otherwise false.
@@ -237,7 +238,7 @@ function isPrime(n) {
   else {console.log(true); return true;}
 }
 }
-isPrime(n);
+
 
 /**
  * Tries to convert value to number and returns it if conversion was successful;
@@ -254,8 +255,9 @@ isPrime(n);
  *   toNumber(42, 0) => 42
  *   toNumber(new Number(42), 0) => 42
  */
-function toNumber(/* value, def */) {
-  throw new Error('Not implemented');
+function toNumber(value, def) {
+  if(Number.isFinite(Number(value))) return Number(value);
+  return def;
 }
 
 /**
