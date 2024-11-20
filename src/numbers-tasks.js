@@ -229,9 +229,15 @@ roundToPowerOfTen(num, pow);
  *   16 => false
  *   17 => true
  */
-function isPrime(/* n */) {
-  throw new Error('Not implemented');
+function isPrime(n) {
+  for (let i = 2; i < n; i++) {
+    if (n % i === 0) 
+    {console.log(false);
+    return false;}
+  else {console.log(true); return true;}
 }
+}
+isPrime(n);
 
 /**
  * Tries to convert value to number and returns it if conversion was successful;
